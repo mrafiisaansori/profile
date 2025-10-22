@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Tech-themed futuristic color palette - Default Dark Mode */
+    --background: 220 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 220 90% 56%;
+    --primary-foreground: 210 40% 98%;
+    
+    --primary-dark: 220 90% 20%;
+    --primary-glow: 220 90% 70%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 220 25% 8%;
+    
+    --accent-glow: 190 100% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 18%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 90%, 20%) 0%, hsl(220, 90%, 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220, 90%, 40%) 0%, hsl(190, 100%, 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220, 20%, 12%) 0%, hsl(220, 25%, 15%) 100%);
+    
+    /* Glow effects */
+    --glow-cyan: 0 0 20px hsl(190, 100%, 50%, 0.5);
+    --glow-blue: 0 0 20px hsl(220, 90%, 56%, 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    /* Light mode - clean white background with blue accents */
+    --background: 0 0% 100%;
+    --foreground: 220 25% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 8%;
+
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-dark: 220 90% 40%;
+    --primary-glow: 220 90% 70%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 25% 8%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --accent-glow: 190 100% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 190 100% 50%;
+    
+    /* Custom gradients for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 90%, 50%) 0%, hsl(220, 90%, 65%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220, 90%, 56%) 0%, hsl(190, 100%, 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    
+    /* Glow effects for light mode */
+    --glow-cyan: 0 0 15px hsl(190, 100%, 50%, 0.3);
+    --glow-blue: 0 0 15px hsl(220, 90%, 56%, 0.3);
+  }
+
+  .dark {
+    /* Dark mode - tech themed with cyan accents */
+    --background: 220 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 220 90% 56%;
+    --primary-foreground: 210 40% 98%;
+    
+    --primary-dark: 220 90% 20%;
+    --primary-glow: 220 90% 70%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 220 25% 8%;
+    
+    --accent-glow: 190 100% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 18%;
+    --ring: 190 100% 50%;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 90%, 20%) 0%, hsl(220, 90%, 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220, 90%, 40%) 0%, hsl(190, 100%, 50%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220, 20%, 12%) 0%, hsl(220, 25%, 15%) 100%);
+    
+    /* Glow effects */
+    --glow-cyan: 0 0 20px hsl(190, 100%, 50%, 0.5);
+    --glow-blue: 0 0 20px hsl(220, 90%, 56%, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                var(--gradient-accent) border-box;
+  }
+}
