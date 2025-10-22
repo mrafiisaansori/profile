@@ -100,7 +100,7 @@ ${formData.message}`;
                 </div>
                 <h3 className="font-bold mb-2">Lokasi</h3>
                 <p className="text-muted-foreground">
-                  Indonesia
+                  Malang, Jawa Timur, Indonesia
                 </p>
               </div>
             </div>
